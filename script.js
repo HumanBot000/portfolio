@@ -4,10 +4,9 @@ const views = {
     about: () => `
 <p class="prompt">about</p>
 <h1>Tobias Sarosi</h1>
-<p class="role">fullstack engineer / flutter dev</p>
+<p class="role">fullstack engineer</p>
 <p class="body-text">
-    Writing code since 2021, starting because online classes were boring,
-    and it stuck. I mostly build tools and applications to make my life easier.
+    Writing code since 2021. I mostly build tools and applications to make my life easier.
 </p>
 <p class="body-text dim">
     Design isn't really my thing.
@@ -287,11 +286,6 @@ interests: () => `
 <p class="prompt">interests</p>
 
 <ul class="kv-list">
-    <li>
-        <span class="key">rf</span>
-        meshtastic, licensed ham radio operator
-    </li>
-
     <li>
         <span class="key">electronics</span>
         smarthome, esp/arduino, pcb design
