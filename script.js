@@ -401,33 +401,7 @@ const views = {
     </article>
 
 
-    <article class="other-project">
-        <div class="other-project-top">
-            <span class="other-project-category">hobby</span>
-            <span class="other-project-number">03</span>
-        </div>
-
-        <h2>Something Else</h2>
-
-        <p>
-            Not everything needs to be a technical project.
-            Document whatever you find interesting.
-        </p>
-
-        <div class="media-slot">
-            <img
-                src="src/Other-Project.png"
-                alt="Other project"
-            >
-        </div>
-
-        <div class="other-project-footer">
-            <span>2026</span>
-            <span class="no-link">personal</span>
-        </div>
-    </article>
-
-</div>
+    
 `,
 
     interests: () => `
