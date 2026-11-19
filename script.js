@@ -1,4 +1,3 @@
-
 const views = {
 
     about: () => `
@@ -175,6 +174,57 @@ const views = {
     </p>
 </div>
 
+<div class="project">
+    <div class="project-head">
+        <h2>AudioRelayX</h2>
+        <span class="stack">Flutter &middot; Kotlin &middot; C++ &middot; OPUS &middot; PCM &middot; UDP</span>
+    </div>
+
+    <p>
+        Open-source, cross-platform audio streaming application that transmits system audio between devices over a local network. Pipeline handles audio capture, PCM framing, Opus encoding/decoding, UDP transmission, jitter buffering, and playback through separate components.
+    </p>
+
+    <div class="media-slot">
+        <img
+            src="src/AudioRelayX.png"
+            alt="AudioRelayX screenshot"
+        >
+    </div>
+
+    <p class="links">
+        <a
+            href="https://github.com/AudioRelayXX"
+            target="_blank"
+            rel="noopener"
+        >github</a>
+    </p>
+</div>
+
+<div class="project">
+    <div class="project-head">
+        <h2>Windows Bluetooth Profile Isolation</h2>
+        <span class="stack">Python</span>
+    </div>
+
+    <p>
+        Quick Autostart tool to disable specific Bluetooth devices on specific Windows accounts/profiles
+    </p>
+
+    <div class="media-slot">
+        <img
+            src="src/WindowsBluetoothProfileIsolation.png"
+            alt="WindowsBluetoothProfileIsolation CLI"
+        >
+    </div>
+
+    <p class="links">
+        <a
+            href="https://github.com/HumanBot000/WindowsBluetoothProfileIsolation"
+            target="_blank"
+            rel="noopener"
+        >github</a>
+    </p>
+</div>
 
 <div class="project">
     <div class="project-head">
@@ -277,12 +327,110 @@ const views = {
     </div>
 
     <p class="links">
-        <span class="closed">closed source</span>
+        <span class="closed">closed source, sunset</span>
     </p>
+</div>
+
+<hr class="gradient">
+
+<div class="other-projects-grid">
+
+    <article class="other-project">
+        <div class="other-project-top">
+            <span class="other-project-category">personal</span>
+            <span class="other-project-number">01</span>
+        </div>
+
+        <h2>Minecraft Server Administration</h2>
+
+        <p>
+            Managed a Minecraft server for 45 active players from my school.
+            From delegating tasks to teams bigger than the usual three-person
+            groups I work with in software development to utilizing AI to
+            create custom plugins within just a few hours despite having
+            almost no experience with them, this project taught me a lot,
+            not just technical but also how to manage people.
+        </p>
+
+        <div class="media-slot">
+            <img
+                src="src/Minecraft-Server.png"
+                alt="Minecraft server"
+            >
+        </div>
+
+        <div class="other-project-footer">
+            <span>2026</span>
+        </div>
+    </article>
+
+
+    <article class="other-project">
+        <div class="other-project-top">
+            <span class="other-project-category">creative</span>
+            <span class="other-project-number">02</span>
+        </div>
+
+        <h2>Project Deep Storage</h2>
+
+        <p>
+            Currently planning and building the best storage ever seen in
+            technical Minecraft and documenting every step along the way.
+        </p>
+
+        <div class="other-project-document">
+            <a
+                href="https://docs.google.com/document/d/1nTKL2VBhUo-Ms4L-yPJauLkp6IiGAAtz/edit?usp=sharing&ouid=109129008044831371809&rtpof=true&sd=true"
+                target="_blank"
+                rel="noopener"
+            >
+                <span class="document-icon">[DOC]</span>
+
+                <span class="document-info">
+                    <strong>Project Deep Storage</strong>
+                    <small>Google Docs · Documentation</small>
+                </span>
+
+                <span class="document-arrow">↗</span>
+            </a>
+        </div>
+
+        <div class="other-project-footer">
+            <span>2025 — ongoing</span>
+        </div>
+    </article>
+
+
+    <article class="other-project">
+        <div class="other-project-top">
+            <span class="other-project-category">hobby</span>
+            <span class="other-project-number">03</span>
+        </div>
+
+        <h2>Something Else</h2>
+
+        <p>
+            Not everything needs to be a technical project.
+            Document whatever you find interesting.
+        </p>
+
+        <div class="media-slot">
+            <img
+                src="src/Other-Project.png"
+                alt="Other project"
+            >
+        </div>
+
+        <div class="other-project-footer">
+            <span>2026</span>
+            <span class="no-link">personal</span>
+        </div>
+    </article>
+
 </div>
 `,
 
-interests: () => `
+    interests: () => `
 <p class="prompt">interests</p>
 
 <ul class="kv-list">
@@ -303,7 +451,7 @@ interests: () => `
 </ul>
 `,
 
-contact: () => `
+    contact: () => `
 <p class="prompt">contact</p>
 
 <ul class="kv-list">
@@ -346,86 +494,82 @@ contact: () => `
 
 
 function render(name) {
-if (!views[name]) {
-    name = "about";
-}
+    if (!views[name]) {
+        name = "about";
+    }
 
-document.getElementById("view-content").innerHTML = views[name]();
+    document.getElementById("view-content").innerHTML = views[name]();
 
-document.querySelectorAll("nav a").forEach(a => {
-    a.classList.toggle(
-        "active",
-        a.getAttribute("href") === "#" + name
-    );
-});
+    document.querySelectorAll("nav a").forEach(a => {
+        a.classList.toggle("active", a.getAttribute("href") === "#" + name);
+    });
 }
 
 
 window.addEventListener("hashchange", () => {
-render(location.hash.slice(1));
+    render(location.hash.slice(1));
 });
 
 render(location.hash.slice(1) || "about");
 
 
-
 function openLightbox(src, alt = "") {
-const lightbox = document.createElement("div");
-lightbox.className = "lightbox";
+    const lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
 
-const close = document.createElement("span");
-close.className = "lightbox-close";
-close.textContent = "[close]";
+    const close = document.createElement("span");
+    close.className = "lightbox-close";
+    close.textContent = "[close]";
 
-const image = document.createElement("img");
-image.src = src;
-image.alt = alt;
+    const image = document.createElement("img");
+    image.src = src;
+    image.alt = alt;
 
-lightbox.appendChild(close);
-lightbox.appendChild(image);
+    lightbox.appendChild(close);
+    lightbox.appendChild(image);
 
-document.body.appendChild(lightbox);
-document.body.style.overflow = "hidden";
-
-
-function closeLightbox() {
-    lightbox.remove();
-    document.body.style.overflow = "";
-    document.removeEventListener("keydown", handleKey);
-}
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = "hidden";
 
 
-function handleKey(event) {
-    if (event.key === "Escape") {
-        closeLightbox();
+    function closeLightbox() {
+        lightbox.remove();
+        document.body.style.overflow = "";
+        document.removeEventListener("keydown", handleKey);
     }
-}
 
 
-close.addEventListener("click", event => {
-    event.stopPropagation();
-    closeLightbox();
-});
-
-
-lightbox.addEventListener("click", event => {
-    if (event.target === lightbox) {
-        closeLightbox();
+    function handleKey(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
     }
-});
 
 
-document.addEventListener("keydown", handleKey);
+    close.addEventListener("click", event => {
+        event.stopPropagation();
+        closeLightbox();
+    });
+
+
+    lightbox.addEventListener("click", event => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+
+    document.addEventListener("keydown", handleKey);
 }
 
 
 document.addEventListener("click", event => {
-const image = event.target.closest(".media-slot img");
+    const image = event.target.closest(".media-slot img");
 
-if (!image) {
-    return;
-}
+    if (!image) {
+        return;
+    }
 
-openLightbox(image.src, image.alt);
+    openLightbox(image.src, image.alt);
 });
 
